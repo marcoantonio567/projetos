@@ -1,0 +1,6 @@
+"Preciso ter um bot assistente que faça minhas funções de lançamento contábil da empresa que trabalho, pois o próprio sistema é muito maçante, 
+e gostaria de fazer os lançamentos no excel, entregar ao bot o excel pronto para o bot ir lançando enquanto faço outras atividades.
+Tentei criar um aqui , o pyautogui funciona perfeitamente, mas na hora de ler o algum arquivo .xlsx ele avisa pelo pylint que está 
+errado a linha de código, e por isso na hora de executar os parâmetros ele trava na hora de lançar com os dados. Preciso de Ajuda urgentemente."
+
+obs: com questão de respeito a privacidade ao cliente os dados da planilha foram trocados por dados aleatorios criados , tentei recriar o layout do sistema da empresa para ficar o mais parecido possivel
