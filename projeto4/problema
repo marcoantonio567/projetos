@@ -1,0 +1,7 @@
+"E aí amigo,Preciso compartilhar uma rotina que tenho aqui no trabalho. Eu uso uma planilha em Excel que alimenta um sistema web que acesso com usuário e senha. 
+A planilha é alimentada com os dados das consultas que eu faço no sistema e isso ajuda muito na hora de organizar as informações.
+A única chatice é ter que ficar inserindo os dados manualmente toda vez, mas acho que com um pouco de automação, dá pra deixar essa tarefa mais fácil."
+
+obs = o site que ta na url do app nao e o mesmo site do sistema do cliente , mas e algo parecido
+
+pessoalmente gostei muito de fazer esse projeto , mas se algum dia eu fosse melhorar ele eu ia implantar a blibioteca bs4 pra ficar mais rapido e mais pratico

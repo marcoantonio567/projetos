@@ -20,6 +20,8 @@ url = "http://127.0.0.1:3000/projeto3/sistema.html" # caso esse de errado troque
 
 # Acessando a URL
 driver.get(url)
+
+
 for linha in vendas_sheet.iter_rows(min_row=2,max_row=101,values_only=True):
     driver.find_element(By.XPATH,'//*[@id="nomeProduto"]').send_keys(linha[0])
     driver.find_element(By.XPATH,'//*[@id="descricao"]').send_keys(linha[1])
