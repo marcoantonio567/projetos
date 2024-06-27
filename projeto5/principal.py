@@ -34,7 +34,7 @@ if __name__ == "__main__":
     cor = "blue"
 
     # Carregar a planilha dos dados fictícios
-    workbook = openpyxl.load_workbook('dados_aleatorios.xlsx')
+    workbook = openpyxl.load_workbook('projeto5/dados_aleatorios.xlsx')
     worksheet = workbook['Sheet']
 
     # Iterar sobre as linhas da planilha
@@ -44,8 +44,8 @@ if __name__ == "__main__":
         legenda_texto = f"{nome.value}\n {cargo.value}\n {email.value}\n {telefone.value}"
 
         # Definir caminho da imagem de entrada e saída
-        imagem_path = "imagem_base.png"
-        output_path = f"resultado_{indice + 1}.jpg"
+        imagem_path = "projeto5/imagem_base.png"
+        output_path = f"projeto5/resultado_{indice + 1}.jpg"
 
         # Adicionar legenda à imagem
         adicionar_legenda(imagem_path, legenda_texto, output_path, fonte_path, fonte_tamanho, posicao, cor)
