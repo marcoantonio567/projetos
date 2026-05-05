@@ -4,14 +4,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 import openpyxl
 
 
-# Configurando as opções do Firefox
+# configure firefox options
 options = webdriver.FirefoxOptions()
-# Criando o driver do Firefox
+# create firefox driver
 driver = webdriver.Firefox(options=options)
 
 
-
-# acessar o site https://www.novaliderinformatica.com.br/computadores-gamers
+# access site https://www.novaliderinformatica.com.br/computadores-gamers
 url = "https://www.novaliderinformatica.com.br/computadores-gamers"
 
 # Acessando a URL
@@ -23,18 +22,25 @@ titulos = driver.find_elements(By.XPATH,"//a[@class='nome-produto']")
 # extrair todos os preços
 precos = driver.find_elements(By.XPATH,"//strong[@class='preco-promocional']")
 
-# Criando a planilha
+# create workbook
 workbook = openpyxl.Workbook()
-# Criando a página 'produtos'
+# create sheet 'produtos'
 workbook.create_sheet('produtos')
-# Seleciono a página produtos
+# select sheet 'produtos'
 sheet_produtos = workbook['produtos']
 sheet_produtos['A1'].value = 'Produto'
 sheet_produtos['B1'].value = 'Preço'
 
-# inserir os títulos e preços na planilha
+# insert titles and prices in workbook sheet 'produtos'
+# select sheet 'produtos'
+sheet_produtos = workbook['produtos']
+# insert titles and prices in workbook sheet 'produtos'
+# select sheet 'produtos'
+sheet_produtos = workbook['produtos']
+# insert titles and prices in workbook sheet 'produtos'
 for titulo, preco in zip(titulos, precos):
     sheet_produtos.append([titulo.text,preco.text])
+# sheet_produtos.append([titulo.text,preco.text])
 
 workbook.save('projeto4/produtos.xlsx') 
 driver.close()
