@@ -2,3 +2,5 @@ openpyxl
 python-docx
 pillow
 selenium
+faker
+phonenumbers
