@@ -2,17 +2,17 @@ from openpyxl import load_workbook
 from docx import Document
 from datetime import datetime
 
-planilha_fornecedores = load_workbook('projeto1/fornecedores.xlsx')
-pagina = planilha_fornecedores['Sheet1']
+supplier_spreadsheet = load_workbook(r'C:\Users\marco\Desktop\update_repositorio\projetos_rpa\projetos\projeto1\fornecedores.xlsx')
+sheet = supplier_spreadsheet['Sheet1']
 
-for linha in pagina.iter_rows(min_row=2):
-    Nome_do_Fornecedor, Endereço, Cidade, Estado, CEP, Telefone, Email, Setor_de_Matéria_Prima = linha
-    arquivo_word = Document()
-    arquivo_word.add_heading('Contrato de prestação de serviço')
+for row in sheet.iter_rows(min_row=2):
+    provider_name, address, city, state, CEP, phone, Email, material_type = row
+    word_file = Document()
+    word_file.add_heading('Contrato de prestação de serviço')
 
-    texto_contrato = f"""
-Este contrato de prestação de serviços é feito entre {Nome_do_Fornecedor.value}, com endereço em {Endereço.value}, 
-{Cidade.value}, {Estado.value}, CEP {CEP.value}, doravante denominado FORNECEDOR, e a empresa CONTRATANTE.
+    text_content = f"""
+Este contrato de prestação de serviços é feito entre {provider_name.value}, com address em {address.value}, 
+{city.value}, {state.value}, CEP {CEP.value}, doravante denominado FORNECEDOR, e a empresa CONTRATANTE.
 
 Pelo presente instrumento particular, as partes têm, entre si, justo e acordado o seguinte:
 
@@ -23,14 +23,14 @@ O FORNECEDOR compromete-se a fornecer à CONTRATANTE os serviços/material de ac
 Este contrato tem prazo de vigência de 12 (doze) meses, iniciando-se na data de sua assinatura, podendo ser renovado conforme acordo entre as partes.
 
 3. VALOR E FORMA DE PAGAMENTO
-O valor dos serviços prestados será acordado conforme as demandas da CONTRATANTE e a capacidade de entrega do FORNECEDOR. Os pagamentos serão realizados mensalmente, mediante apresentação de nota fiscal.
+O valor dos serviços prstates será acordado conforme as demandas da CONTRATANTE e a capacity de entrega do FORNECEDOR. Os pagamentos serão realizados mensalmente, mediante apresentação de nota fiscal.
 
 4. CONFIDENCIALIDADE
 Todas as informações trocadas entre as partes durante a vigência deste contrato serão tratadas como confidenciais.
 
 Para firmeza e como prova de assim haverem justo e contratado, as partes assinam o presente contrato em duas vias de igual teor e forma.
 
-FORNECEDOR: {Nome_do_Fornecedor.value}
+FORNECEDOR: {provider_name.value}
 E-mail: {Email.value}
 
 CONTRATANTE: Empresa_contratante
@@ -39,6 +39,6 @@ E-mail: Empresa_contratante@gmail.com
 São Paulo ,{datetime.now().strftime('%d/%m/%Y')}
 """
     
-    arquivo_word.add_paragraph(texto_contrato)
+    word_file.add_paragraph(text_content)
     
-    arquivo_word.save(f'projeto1/contratos/contrato_{Nome_do_Fornecedor.value}.docx')
+    word_file.save(f'C:\\Users\\marco\\Desktop\\update_repositorio\\projetos_rpa\\projetos\\projeto1\\contratos\\contrato_{provider_name.value}.docx')
